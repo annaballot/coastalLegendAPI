@@ -1,0 +1,178 @@
+{
+  "users": [
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "_id": "a1770e76-5d11-4987-86a5-26516425f97e"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "6957ea62-a322-4455-b6dd-d166f6b9bfa0"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "_id": "1e6bcc4b-a995-4fd2-8bde-ea99f50861bc"
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Ballot",
+      "email": "annaballot@gmail.com",
+      "password": "test",
+      "_id": "4de6f0a1-51b3-4827-b1d3-c054514fed2d"
+    },
+    {
+      "firstName": "pat",
+      "lastName": "Burke",
+      "email": "a@gmail.com",
+      "password": "test",
+      "_id": "1987ec75-1c76-43dd-a7e4-b02e5797b361"
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Ballot",
+      "email": "annaballot@gmail.com",
+      "password": "test",
+      "_id": "7078a63c-318d-4f47-9d2c-c338dc00ae88"
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Ballot",
+      "email": "annaballot@gmail.com",
+      "password": "test",
+      "_id": "4476c71b-2d3e-4dc0-802e-e46e193552e3"
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Ballot",
+      "email": "annaballot@gmail.com",
+      "password": "test",
+      "_id": "30f1f0d8-d102-4dbf-8f7f-bb487eecdfe5"
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Ballot",
+      "email": "annaballot@gmail.com",
+      "password": "test",
+      "_id": "50669d42-c830-4e00-a4f1-430fc7ddfc26"
+    }
+  ],
+  "lists": [
+    {
+      "title": "90s Music",
+      "_id": "4b4bf087-6b81-4a19-8f73-2f813347f826"
+    },
+    {
+      "title": "Running Music",
+      "_id": "e7395d94-197b-4b5a-b03c-856c2b08d20a"
+    },
+    {
+      "title": "relaxing",
+      "_id": "9f3bb7f8-0e0a-47f1-9ffa-6a0dd64d2112"
+    },
+    {
+      "userid": "4de6f0a1-51b3-4827-b1d3-c054514fed2d",
+      "title": "90s",
+      "_id": "9700a1c9-e949-4bcc-add4-73702a3f4855"
+    },
+    {
+      "userid": "4de6f0a1-51b3-4827-b1d3-c054514fed2d",
+      "title": "Running",
+      "_id": "f7f3c012-d475-415e-bd16-82421cd59486"
+    },
+    {
+      "userid": "1987ec75-1c76-43dd-a7e4-b02e5797b361",
+      "title": "blah blah",
+      "_id": "902b7128-db4d-4dda-905e-e153e36afa32"
+    },
+    {
+      "userid": "1987ec75-1c76-43dd-a7e4-b02e5797b361",
+      "title": "Hel",
+      "_id": "9f32225f-bf30-4454-b47e-60ae6f04a493"
+    },
+    {
+      "userid": "4de6f0a1-51b3-4827-b1d3-c054514fed2d",
+      "title": "dfsdf",
+      "_id": "e3bd1327-c1ba-408e-8156-a85241e8bf74"
+    },
+    {
+      "userid": "4de6f0a1-51b3-4827-b1d3-c054514fed2d",
+      "title": "dsfsd",
+      "_id": "4f84d1af-4ddd-4d5e-ba79-a4aa861e8fcd"
+    }
+  ],
+  "placemarks": [
+    {
+      "title": "Country Roads",
+      "artist": "Unknown",
+      "duration": 5,
+      "_id": "4feea015-c13b-4158-b77b-e4cdada193ed",
+      "playlistid": "9700a1c9-e949-4bcc-add4-73702a3f4855"
+    },
+    {
+      "title": "Wannabe",
+      "artist": "Spice Girls",
+      "duration": 3,
+      "_id": "17c7226e-9acf-4bf5-9979-e21fc6f6ed11",
+      "playlistid": "9700a1c9-e949-4bcc-add4-73702a3f4855"
+    },
+    {
+      "title": "Reach",
+      "artist": "S Club",
+      "duration": 1,
+      "_id": "36b738b2-0756-4ff3-9f6d-c3dbeeb5e03e",
+      "playlistid": "f7f3c012-d475-415e-bd16-82421cd59486"
+    },
+    {
+      "title": "dfsdf",
+      "artist": "fds",
+      "duration": 666,
+      "_id": "92da5c44-d943-4918-8ea5-a7cd51203d08",
+      "playlistid": "902b7128-db4d-4dda-905e-e153e36afa32"
+    },
+    {
+      "title": "rte",
+      "artist": "rter",
+      "duration": 4,
+      "_id": "84f61892-0e98-4c23-be74-a681b0849230",
+      "playlistid": "902b7128-db4d-4dda-905e-e153e36afa32"
+    },
+    {
+      "title": "dfs",
+      "artist": "dfs",
+      "duration": 2,
+      "_id": "d11e7366-d0f4-4427-b101-4ee759fae54f",
+      "playlistid": "9f32225f-bf30-4454-b47e-60ae6f04a493"
+    },
+    {
+      "duration": null,
+      "_id": "f0bdf6b3-8fa4-4f9f-81e5-1429be0efdea",
+      "listid": "f7f3c012-d475-415e-bd16-82421cd59486"
+    },
+    {
+      "name": "Clonea2",
+      "category": "xdfsd",
+      "description": "dsfsd",
+      "latitude": 44,
+      "longitude": 4,
+      "_id": "763673fa-2847-479e-ae32-eb283ead541f",
+      "listid": "e3bd1327-c1ba-408e-8156-a85241e8bf74"
+    },
+    {
+      "name": "dsfs",
+      "category": "dsfs",
+      "description": "sdf",
+      "latitude": 0,
+      "longitude": 0,
+      "_id": "adba4ab4-179f-465e-b3b6-055a00ad5fdc",
+      "listid": "4f84d1af-4ddd-4d5e-ba79-a4aa861e8fcd"
+    }
+  ]
+}

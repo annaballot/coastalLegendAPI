@@ -1,0 +1,15 @@
+{{#each lists}}
+  <div class="box box-link-hover-shadow has-background-info">
+    <h2 class="title has-text-white">
+      {{title}}
+    </h2>
+    <a href="/list/{{_id}}" class="button">
+      <span class="icon is-small">
+        <i class="fas fa-folder-open is-info is-light has-text-info-dark has-text-weight-bold"></i>
+      </span>
+    </a>
+    <a href="/dashboard/deletelist/{{_id}}" class="button">
+      <i class="fas fa-trash is-info is-light has-text-info-dark has-text-weight-bold"></i>
+    </a>
+  </div>
+{{/each}}

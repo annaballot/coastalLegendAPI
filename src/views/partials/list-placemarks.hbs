@@ -1,0 +1,40 @@
+<div class="box box-link-hover-shadow">
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each list.placemarks}}
+      <tr>
+        <td>
+          {{name}}
+        </td>
+        <td>
+          {{category}}
+        </td>
+        <td>
+          {{description}}
+        </td>
+        <td>
+          {{latitude}}
+        </td>
+        <td>
+          {{longitude}}
+        </td>
+        <td>
+          <a href="/list/{{../list._id}}/deleteplacemark/{{_id}}" class="ui icon button">
+            <i class="fas fa-trash is-info is-light has-text-info-dark has-text-weight-bold"></i>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>

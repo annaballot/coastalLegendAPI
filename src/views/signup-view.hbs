@@ -1,0 +1,30 @@
+{{> welcome-menu active="signup"}}
+
+<div class="card has-background-info has-text-white">
+<section class="section">
+  <h1 class="title has-text-white">Sign up</h1>
+  <form action="/register" method="POST">
+    <label class="label has-text-white">Name</label>
+    <div class="field is-horizontal">
+      <div class="field-body has-text-white">
+        <div class="field">
+          <input class="input" type="text" placeholder="Enter first name" name="firstName">
+        </div>
+        <div class="field">
+          <input class="input" type="text" placeholder="Enter last name" name="lastName">
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label has-text-white">Email</label> <input class="input" type="text" placeholder="Enter email" name="email">
+    </div>
+    <div class="field">
+      <label class="label has-text-white">Password</label> <input class="input" type="password" placeholder="Enter Password" name="password">
+    </div>
+    <br>
+    <div class="field is-grouped">
+      <button class="button button is-info is-light has-text-info-dark has-text-weight-bold">Submit</button>
+    </div>
+  </form>
+</section>
+</div>

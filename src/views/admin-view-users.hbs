@@ -1,0 +1,45 @@
+{{> admin-menu active="users"}}
+
+<section class="section">
+  {{> admin-banner}}
+
+<div class="box box-link-hover-shadow">
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+      <tr>
+        <td>
+          {{_id}}
+        </td>
+        <td>
+          {{firstName}}
+        </td>
+        <td>
+          {{lastName}}
+        </td>
+        <td>
+          {{email}}
+        </td>
+        <td>
+          <a href="/admin/users/deleteuser/{{_id}}" class="ui icon button">
+            <i class="fas fa-trash is-info is-light has-text-info-dark has-text-weight-bold"></i>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+
+</section>
+
+
