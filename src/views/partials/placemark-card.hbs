@@ -1,0 +1,28 @@
+
+{{#each placemarks}}
+<div class="card has-background-info has-text-white">
+<section class="section">
+  
+  <h1 class="title has-text-white">{{name}}</h1>
+   
+     
+          
+      {{_id}}
+      <br>
+      Category: {{category}}
+       <br>
+       Description:  {{description}}
+       <br>
+       Latitude:   {{latitude}}
+        <br>
+      Longitude:    {{longitude}}
+       <br>
+       Image: {{img}}
+   <br>
+   <br>
+   {{> placemark-image }}
+  
+</section>
+</div>
+<br>
+ {{/each}}

@@ -56,7 +56,8 @@ export const clonea = {
   "category": "Beach",
   "description": "2km stretch of beach along the copper coast",
   "latitude": 5.8,
-  "longitude": 11.1
+  "longitude": 11.1,
+  "rating": 8
 };
 
 
@@ -66,7 +67,8 @@ export const testPlacemarks = [
     "category": "Beach",
     "description": "Another lovely beach",
     "latitude": 3,
-    "longitude": 1.1
+    "longitude": 1.1,
+    "rating": 6
   },
 
   {
@@ -74,7 +76,8 @@ export const testPlacemarks = [
     "category": "Surf Spot",
     "description": "great surfing spot",
     "latitude": 55.2,
-    "longitude": 19.1
+    "longitude": 19.1,
+    "rating": 7
   },
 
   {
@@ -82,7 +85,8 @@ export const testPlacemarks = [
     "category": "Diving",
     "description": "has a diving board, can only use at high tide",
     "latitude": 43.78,
-    "longitude": 49.1
+    "longitude": 49.1,
+    "rating": 9
   },
 
 ];

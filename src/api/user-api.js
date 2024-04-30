@@ -1,8 +1,8 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
-import { UserSpec, UserSpecPlus, IdSpec, UserArray, UserCredentialsSpec, JwtAuth } from "../models/joi-schemas.js";
+import { UserSpec2, UserSpec, UserSpecPlus, IdSpec, UserArray, UserCredentialsSpec, JwtAuth } from "../models/joi-schemas.js";
 import { validationError } from "./logger.js";
-import { createToken } from "./jwt-utils.js";
+import { createToken, validate, decodeToken } from "./jwt-utils.js";
 
 export const userApi = {
   find: {
@@ -46,9 +46,7 @@ export const userApi = {
   },
 
   create: {
-    auth: {
-      strategy: "jwt",
-    },
+    auth: false,
     handler: async function (request, h) {
       try {
         const user = await db.userStore.addUser(request.payload);
@@ -88,15 +86,30 @@ export const userApi = {
     auth: false,
     handler: async function (request, h) {
       try {
-        const user = await db.userStore.getUserByEmail(request.payload.email);
-        if (!user) {
-          return Boom.unauthorized("User not found");
+        const { email, password } = request.payload;
+        // Check if email and password are provided
+        if (!email || !password) {
+          return Boom.badRequest("Email and password are required");
         }
-        if (user.password !== request.payload.password) {
-          return Boom.unauthorized("Invalid password");
+        if (email === process.env.email && password === process.env.password) {
+          const admin = {
+            email: process.env.email,
+            password: process.env.password,
+          };
+          const token = createToken(admin);
+          return h.response({ success: true, name: `${admin.firstName} ${admin.lastName}`, 
+          _id: admin._id,  token: token }).code(201);
+          }
+        // Authenticate user based on email and password
+        const user = await db.userStore.getUserByEmail(email);
+        if (!user || user.password !== password) {
+          return Boom.unauthorized("Invalid email or password");
         }
+        // Generate JWT token for authenticated user
         const token = createToken(user);
-        return h.response({ success: true, token: token }).code(201);
+        return h.response({ success: true, name: `${user.firstName} ${user.lastName}`, 
+                          token: token 
+                      }).code(201);
       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }

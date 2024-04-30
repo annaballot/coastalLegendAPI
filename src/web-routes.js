@@ -21,17 +21,22 @@ export const webRoutes = [
 
   { method: "GET", path: "/about", config: aboutController.index },
 
+  // { method: "GET", path: "/dashboard", config: dashboardController.index },
+  // { method: "POST", path: "/dashboard/addlist", config: dashboardController.addList },
   { method: "GET", path: "/dashboard", config: dashboardController.index },
-  { method: "POST", path: "/dashboard/addlist", config: dashboardController.addList },
   { method: "GET", path: "/dashboard/deletelist/{id}", config: dashboardController.deleteList },
   { method: "GET", path: "/dashboard/allPlacemarks", config: dashboardController.showAllPlacemarks },
   { method: "GET", path: "/dashboard/categories", config: dashboardController.filterPlacemarks },
+  { method: "POST", path: "/dashboard/addplacemark", config: dashboardController.addPlacemark },
+  { method: "GET", path: "/dashboard/deleteplacemark/{placemarkid}", config: dashboardController.deletePlacemark },
 
 
+  { method: "POST", path: "/dashboard/addPlacemarkImg/{id}", config: dashboardController.addPlacemarkImg },
 
-  { method: "GET", path: "/list/{id}", config: listController.index },
-  { method: "POST", path: "/list/{id}/addplacemark", config: listController.addPlacemark },
-  { method: "GET", path: "/list/{id}/deleteplacemark/{placemarkid}", config: listController.deletePlacemark },
+
+  // { method: "GET", path: "/list/{id}", config: listController.index },
+  // { method: "POST", path: "/list/{id}/addplacemark", config: listController.addPlacemark },
+  // { method: "GET", path: "/list/{id}/deleteplacemark/{placemarkid}", config: listController.deletePlacemark },
 
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } }
 ];

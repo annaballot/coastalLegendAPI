@@ -44,6 +44,8 @@ export const seedData = {
         description: "Lovely long beach in west waterford",
         latitude: 3.75,
         longitude: 15.4,
+        rating: 8,
+        img: "https://res.cloudinary.com/dloycvswk/image/upload/v1714496692/uvagfsaikoletstdt3sl.jpg",
         userid: "->users.homer",
         listid: "->lists.faveBeaches"
       },

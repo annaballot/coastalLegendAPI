@@ -1,4 +1,4 @@
-import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
+import { UserSpec, UserCredentialsSpec, PlacemarkSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
 export const accountsController = {
@@ -75,6 +75,40 @@ export const accountsController = {
       return { isValid: false };
     }
     return { isValid: true, credentials: user };
+  },
+
+
+
+
+  addPlacemark: {
+    validate: {
+      payload: PlacemarkSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("dashboard-view", { title: "Add placemark error", errors: error.details }).takeover().code(400);
+      },
+    },
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const newPlacemark = {
+        name: request.payload.name,
+        category: request.payload.category,
+        description: request.payload.description,
+        latitude: Number(request.payload.latitude),
+        longitude: Number(request.payload.longitude),
+        rating: Number(request.payload.rating),
+      };
+      await db.placemarkStore.addPlacemark(loggedInUser._id, newPlacemark);
+      return h.redirect(`/list/${list._id}`);
+    },
+  },
+
+  deletePlacemark: {
+    handler: async function (request, h) {
+      const list = await db.listStore.getListById(request.params.id);
+      await db.placemarkStore.deletePlacemark(request.params.placemarkid);
+      return h.redirect(`/list/${list._id}`);
+    },
   },
 
 };

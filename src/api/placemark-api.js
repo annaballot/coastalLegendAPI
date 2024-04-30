@@ -2,6 +2,8 @@ import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
 import { IdSpec, PlacemarkSpec, PlacemarkSpecPlus, PlacemarkArraySpec } from "../models/joi-schemas.js";
 import { validationError } from "./logger.js";
+import { decodeToken, validate } from "./jwt-utils.js";
+// import jwt from "jsonwebtoken";
 
 export const placemarkApi = {
   find: {
@@ -50,7 +52,21 @@ export const placemarkApi = {
     },
     handler: async function (request, h) {
       try {
-        const placemark = await db.placemarkStore.addPlacemark(request.params.id, request.params.userID, request.payload);
+        const decodedToken = decodeToken(request.headers.authorization);
+        const validationResult = await validate(decodedToken, request);
+        if (!validationResult.isValid) {
+          return Boom.unauthorized("Invalid credentials");
+        }
+        // access user ID from decoded payload
+        // eslint-disable-next-line prefer-destructuring
+        const userId = decodedToken.userId;
+        // access new placemark data from request payload
+        const newPlacemark = request.payload;
+        // add userId to the new placemark data
+        newPlacemark.userId = userId;
+        // proceed with placemark creation using the retrieved user id
+        // const result = await db.placemarkStore.addPlacemark(userId, newPlacemark);
+        const placemark = await db.placemarkStore.addPlacemark(userId, newPlacemark);
         if (placemark) {
           return h.response(placemark).code(201);
         }
